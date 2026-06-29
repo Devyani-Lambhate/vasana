@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vasana research — Project 01: AI Datacenter Environmental Impact.">
+  <title>Research · Vasana</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--rule);
+    }
+    .research-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .research-card:nth-child(even) { border-right: none; }
+    .research-card-icon {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .research-card h3 {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .research-card p {
+      font-size: 14px;
+      color: var(--ink-3);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .stat-inline {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .stat-inline-item {}
+    .stat-inline-value {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .stat-inline-label {
+      font-size: 11px;
+      color: var(--ink-4);
+      margin-top: 2px;
+    }
+    .data-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-4);
+      letter-spacing: 0.04em;
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 768px) {
+      .research-grid { grid-template-columns: 1fr; }
+      .research-card { border-right: none; }
+      .research-card:nth-child(even) { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-wordmark">VASANA</span>
+    <span class="nav-tag">वासना</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="mission.html">Mission</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+  <a href="research.html" class="nav-cta">EXPLORE RESEARCH →</a>
+  <button class="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <p class="hero-eyebrow">Research · Project 01</p>
+  <h1>AI Datacenter<br>Environmental Impact</h1>
+  <p>A living dataset tracking the energy, water, and hardware footprint of global AI and cloud infrastructure. Updated quarterly. All data and methodology published openly.</p>
+</div>
+
+<div class="mission-band">
+  <span class="section-label">Summary</span>
+  <p class="mission-text">AI infrastructure is the <strong>fastest-growing source of new energy demand</strong> in the global economy. Yet the industry's environmental reporting remains fragmented, inconsistent, and often incomplete. This project aggregates the best available evidence across four dimensions.</p>
+</div>
+
+<section class="research-grid">
+
+  <div class="research-card" id="energy">
+    <div class="research-card-icon">01 · Carbon & Energy</div>
+    <h3>Power consumption and carbon intensity</h3>
+    <p>Global datacenters consumed an estimated 240–340 TWh of electricity in 2022, roughly equivalent to the annual electricity use of the United Kingdom. AI-specific workloads — training and inference — represent a rapidly growing share of this total.</p>
+    <p>Carbon intensity varies dramatically by geography: a model trained using coal-heavy grid electricity in parts of Asia may produce 30× more CO₂ than the same model trained on renewable-powered infrastructure in Norway.</p>
+    <div class="stat-inline">
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">~2%</div>
+        <div class="stat-inline-label">Global electricity share</div>
+      </div>
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">4×</div>
+        <div class="stat-inline-label">Projected demand growth by 2030</div>
+      </div>
+    </div>
+    <div class="data-note">Sources: IEA, Lawrence Berkeley National Laboratory, 2023–24</div>
+  </div>
+
+  <div class="research-card" id="water">
+    <div class="research-card-icon">02 · Water Usage</div>
+    <h3>Cooling demand and water scarcity</h3>
+    <p>Datacenters use water for cooling at scale. A single large hyperscale facility can consume millions of litres per day — drawing from local aquifers and river systems, often in regions already facing water stress.</p>
+    <p>Training a single large language model has been estimated to require billions of litres of water when cooling is accounted for across the full energy chain. This figure is rarely disclosed voluntarily.</p>
+    <div class="stat-inline">
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">6.4bn L</div>
+        <div class="stat-inline-label">Estimated per large model training run</div>
+      </div>
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">~40%</div>
+        <div class="stat-inline-label">Facilities in water-stressed regions</div>
+      </div>
+    </div>
+    <div class="data-note">Sources: UC Riverside, WRI Aqueduct, 2023</div>
+  </div>
+
+  <div class="research-card" id="hardware">
+    <div class="research-card-icon">03 · E-Waste & Hardware</div>
+    <h3>Chip lifecycle and electronic waste</h3>
+    <p>AI's hardware demands have compressed GPU replacement cycles to 2–3 years as model architectures evolve faster than previous compute generations. Each cycle generates electronic waste containing rare earth elements, lead, and other hazardous materials.</p>
+    <p>Global e-waste recycling rates remain below 25%. The majority of decommissioned AI hardware enters informal recycling chains or landfill, with significant downstream environmental consequences.</p>
+    <div class="stat-inline">
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">2–3 yr</div>
+        <div class="stat-inline-label">Typical AI GPU replacement cycle</div>
+      </div>
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">&lt;25%</div>
+        <div class="stat-inline-label">Global e-waste recycling rate</div>
+      </div>
+    </div>
+    <div class="data-note">Sources: UN Global E-waste Monitor, 2024</div>
+  </div>
+
+  <div class="research-card" id="scorecards">
+    <div class="research-card-icon">04 · Provider Scorecards</div>
+    <h3>Transparency and accountability ratings</h3>
+    <p>Major cloud and AI providers vary significantly in the quality, completeness, and verifiability of their environmental disclosures. Some publish detailed PUE, WUE, and carbon metrics. Others offer only high-level commitments with no auditable underlying data.</p>
+    <p>Vasana rates providers across four dimensions: disclosure completeness, methodology transparency, progress against stated targets, and third-party verification.</p>
+    <div class="stat-inline">
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">&lt;40%</div>
+        <div class="stat-inline-label">Providers with verifiable reporting</div>
+      </div>
+      <div class="stat-inline-item">
+        <div class="stat-inline-value">4</div>
+        <div class="stat-inline-label">Rating dimensions tracked</div>
+      </div>
+    </div>
+    <div class="data-note">Scorecard methodology: vasana.earth/methodology</div>
+  </div>
+
+</section>
+
+<div class="prose-section">
+  <span class="section-label prose-label">Methodology</span>
+  <div class="prose-body">
+    <h2>How we produce these numbers</h2>
+    <p>All Vasana data begins with primary sources: regulatory filings, corporate sustainability reports, peer-reviewed academic literature, and direct data requests to organisations. Where primary data is unavailable, we use modelled estimates based on published methodologies — always with explicit uncertainty ranges.</p>
+    <p>We do not publish numbers we cannot trace. If a figure is contested or uncertain, we present the range of credible estimates rather than a single misleading point value. All source data, model code, and assumptions are published in our GitHub repository.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <span class="footer-wordmark">VASANA</span>
+    <span class="footer-sub">वासना · Environmental Intelligence</span>
+  </div>
+  <div class="footer-right">
+    <a href="mission.html">Mission</a>
+    <a href="research.html">Research</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+    <span>© 2025</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
