@@ -260,7 +260,7 @@ nav {
   font-family: var(--mono);
   font-size: 18px;
   letter-spacing: 0.1em;
-  color: var(--ink-4);
+  color: var(--ink);
   text-transform: uppercase;
 }
 
